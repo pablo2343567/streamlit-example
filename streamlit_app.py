@@ -4,6 +4,13 @@ import math
 import pandas as pd
 import streamlit as st
 
+import operator
+import matplotlib.pyplot as plt
+import numpy as np
+import pygal
+from pygal.style import Style
+
+
 """
 # Welcome to Streamlit!
 
@@ -38,12 +45,7 @@ with st.echo(code_location='below'):
         .encode(x='x:Q', y='y:Q'))
 
    
-import operator
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-import pygal
-from pygal.style import Style
+
 
 dft = pd.read_excel("d.xlsx",sheet_name="t")
 df = pd.read_excel("d.xlsx",sheet_name="Datos sin 99")
