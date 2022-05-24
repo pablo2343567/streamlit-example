@@ -47,7 +47,7 @@ with st.echo(code_location='below'):
 
     
 
-uploaded_file = st.file_uploader('d.xlsx')
+uploaded_file = st.file_uploader('datos.xlsx')
 df99=pd.read_excel(uploaded_file)
 
 uploaded_file = st.file_uploader('t.xlsx')
