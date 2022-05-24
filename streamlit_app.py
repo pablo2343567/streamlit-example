@@ -45,12 +45,16 @@ with st.echo(code_location='below'):
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
 
-   
+    
+wb = xlrd.open_workbook('d.xlsx')
 
 
-dft = pd.read_excel("d.xlsx",sheet_name="t")
-df = pd.read_excel("d.xlsx",sheet_name="Datos sin 99")
-df99 = pd.read_excel("d.xlsx",sheet_name="Datos")
+
+
+sft = wb.sheet_by_name('t')
+
+dft = pd.DataFrame(sft.nrows, colums = sft.ncols)
+
 
 
 listadeportes = list (dft['Países'])
