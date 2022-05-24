@@ -46,14 +46,15 @@ with st.echo(code_location='below'):
         .encode(x='x:Q', y='y:Q'))
 
     
-wb = xlrd.open_workbook('d.xlsx')
 
+uploaded_file = st.file_uploader('d.xlsx')
+df99=pd.read_excel(uploaded_file)
 
+uploaded_file = st.file_uploader('t.xlsx')
+dft=pd.read_excel(uploaded_file)
 
-
-sft = wb.sheet_by_name('t')
-
-dft = pd.DataFrame(sft.nrows, colums = sft.ncols)
+uploaded_file = st.file_uploader('datos sin 99.xlsx')
+df=pd.read_excel(uploaded_file)
 
 
 
