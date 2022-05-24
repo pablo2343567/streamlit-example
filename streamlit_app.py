@@ -8,6 +8,7 @@ import operator
 import matplotlib as plt
 import numpy as np
 import pygal
+import xlrd
 from pygal.style import Style
 
 
