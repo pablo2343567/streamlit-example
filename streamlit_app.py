@@ -31,27 +31,6 @@ listaaños = ['R-' , '17' , '18' , '19' , 'T-']
 
 
 
-def ListaSoloGanadores():
-    """
-    Devuelve una lista de diccionarios con clave el deporte y valor el ganador
-    """
-    res = {}
-    for deporte in listadeportes:
-
-        for i in range (len(listapaises)): 
-            pos = int ( df99[deporte][i] )
-            if pos == 1:
-                res[deporte] = listapaises[i]
-                
-    return res
-
-
-listaGanadores = ListaSoloGanadores()
-
-
-
-
-
 def filtro (cadena):
     """
     Dada una cadena de texto, selecciona los deportes que la contienen
@@ -191,18 +170,6 @@ def dicEvolucionNuevo(deporte, dic):
     
     
     
-d1 = nGanadores(listadeportes,listapaises)
-d2 = PaisDeporte(listadeportes,listapaises,3)
-
-d4 = nGanadoresInversa (listadeportes,listapaises)
-
-d5 = cantidadMedallas(d2)
-
-
-
-
-
-
 
 
 
