@@ -256,7 +256,7 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
     for deporte in dic:
         if deporte in a:
             i += 1
-            plt.figure(figsize=(10,8))
+            fig = plt.figure()
             plt.title(deporte)
             result = dic[deporte]
             result = pd.Series(result)
@@ -282,7 +282,7 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
                     valores[0] = z
                     indices[0] = result.index[i]
             plt.bar(indices, valores , color= coloritos)
-            plt.show()
+            st.pyplot(fig)
 
 
 
@@ -291,16 +291,14 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
    
 
 
-agree = st.checkbox('¿Quieres seleccionar los deportes por código? Ej: escribir M para todas las modalidades de Masculino', value=False)                    
+                 
                     
-listaopciones = ['A4','Baloncesto','Balonmano','Ciclo','Doma','Espada','Florete','Futbol','Gim','Hockey','K4','N','Rugby','Sable','Salto','Volei','Wax','Waterpolo']
-
-if not agree:
-    opcion = st.selectbox('Selecciona uno de los siguientes deportes:',options=listaopciones,index = 2)
-else:
-    opcion = st.text_input('Escribe un deporte codificado:')
+opcion = st.selectbox('Selecciona una modalidad',listadeportes)
 
 
 
 
-n = st.select_slider('Selecciona la cantidad de países a mostrar', options=range(1,9),value = 4)
+
+
+
+graficaPodioDeporte(opcion,listadeportes,listapaises)
