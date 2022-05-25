@@ -12,4 +12,4 @@ import xlrd
 from pygal.style import Style
 
     
-df = pd.read_excel('datos.xlsx')
+df = pd.read_excel('datos.csv')
