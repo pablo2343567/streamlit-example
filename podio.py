@@ -215,7 +215,7 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
     
     dic = dicPuesto(listadeportes,listapaises)
     
-    i += 1
+
     fig = plt.figure()
     plt.title(deport)
     result = dic[deport]
