@@ -215,6 +215,78 @@ d5 = cantidadMedallas(d2)
 
 #--------------------------------------------------------
 
+
+def graficaPodioDeporte (deport,listadeportes,listapaises):
+    """
+    Dado un deporte, dibuja un podio to wapo
+    """
+         
+    def dicPuesto(deportes,paises):
+        """
+        Como el diccionario de nGanadores pero da más peso a los primeros 
+        """
+        a = list (range(1,4))
+        
+        res = {}
+        for deporte in deportes:
+            dicpos = {}
+            
+            for i in range (len(paises)): 
+                pos = int ( df99[deporte][i] )
+                if pos != 99 and pos != 0 and pos <= 3:
+                    dicpos[paises[i]] = a[-pos]
+    
+            valores_ord = dict(sorted(dicpos.items(), key=operator.itemgetter(1)))
+            
+            res[deporte] = valores_ord
+                    
+        return res
+        
+    
+    
+    dic = dicPuesto(listadeportes,listapaises)
+    
+    
+    a = filtro(deport)
+    x = len(a)
+    i = 0
+    for deporte in dic:
+        if deporte in a:
+            i += 1
+            fig = plt.figure(figsize=(10,8))
+            plt.title(deporte)
+            result = dic[deporte]
+            result = pd.Series(result)
+            
+            coloritos = [0,0,0]
+            valores = [0,0,0]
+            indices = ['','','']
+
+            for i in range (len(result.values)):
+                
+                x = result.values[i]
+                z = x   
+                if x == max(result.values):
+                    coloritos[1] = 'gold'
+                    valores[1] = z
+                    indices[1] = result.index[i]
+                elif x == min(result.values):
+                    coloritos[2] = 'sienna'
+                    valores[2] = z
+                    indices[2] = result.index[i]
+                else:
+                    coloritos[0] = 'grey'
+                    valores[0] = z
+                    indices[0] = result.index[i]
+            plt.bar(indices, valores , color= coloritos)
+        st.pyplot(fig)
+
+
+
+    
+graficaPodioDeporte('R-Baloncesto M ',listadeportes,listapaises)
+
+
 def graf():
     #Creating the dataset
     data = {'C':20, 'C++':15, 'Java': 30, 'Python':35}
