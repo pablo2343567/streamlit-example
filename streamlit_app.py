@@ -278,7 +278,7 @@ opcion = st.selectbox('O de manera más sencilla selecciona uno de los siguiente
 
 n = st.select_slider('Selecciona la cantidad de países a mostrar', options=range(1,9))
 
-graficoMedallasNMejores (opcion,listapaises)
+graficoMedallasNMejores (opcion,listapaises,n)
 
 
 
