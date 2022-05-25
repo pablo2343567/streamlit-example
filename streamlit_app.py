@@ -11,5 +11,5 @@ import pygal
 import xlrd
 from pygal.style import Style
 
-    
-df = pd.read_csv('datos.csv')
+url = 'https://github.com/pablo2343567/streamlit-example/blob/master/datos.csv'   
+df = pd.read_csv(url)
