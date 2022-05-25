@@ -253,7 +253,7 @@ def graficoMedallasNMejores(cat,listapaises,a=10):
         
     listadeportes = filtro(cat)
     if len(listadeportes) == 0:
-        st.text('Error, deporte no válido)
+        st.text('Error, deporte no válido')
         break
     d2 = PaisDeporte(listadeportes,listapaises,3)
     
