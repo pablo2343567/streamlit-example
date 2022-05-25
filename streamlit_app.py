@@ -214,7 +214,16 @@ d5 = cantidadMedallas(d2)
 #--------------------------------------------------------
 
 
-
+def main():
+    page = st.sidebar.selectbox(
+        "Select a Page",
+        [
+            "Bar Plot" # New page name
+        ]
+    )
+   bar_chart()
+   
+   
 
 def graf():
     #Creating the dataset
