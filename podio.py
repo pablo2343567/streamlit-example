@@ -296,9 +296,6 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
 opcion = st.selectbox('Selecciona una modalidad',listadeportes)
 
 
-
-
-
-
-
 graficaPodioDeporte(opcion,listadeportes,listapaises)
+
+st.text ('El valor de 3 corresponde al primer puesto, 2 para el segundo y 3 para el tercer puesto')
