@@ -216,6 +216,12 @@ d5 = cantidadMedallas(d2)
 #--------------------------------------------------------
 
 
+
+
+opcion = st.selectbox(label, listadeportes)
+
+
+
 def graficoMedallasNMejores(cat,listapaises,a=10):
     """
     Dada una cadena de texto (por ejemplo, 'Baloncesto'), devuelve una
@@ -263,23 +269,7 @@ def graficoMedallasNMejores(cat,listapaises,a=10):
     
     
     
-graficoMedallasNMejores ('Mesa M',listapaises,4)
+graficoMedallasNMejores (opcion,listapaises,10)
 
 
-def graf():
-    #Creating the dataset
-    data = {'C':20, 'C++':15, 'Java': 30, 'Python':35}
-    Courses = list(data.keys())
-    values = list(data.values())
-
-    fig = plt.figure()
-
-    plt.bar(Courses, values)
-    plt.xlabel("Programming Environment")
-    plt.ylabel("Number of Students")
-    plt.title("Students enrolled in different courses")
-    st.pyplot(fig)
-    
-    
-graf()
 
