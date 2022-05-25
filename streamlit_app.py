@@ -218,7 +218,8 @@ d5 = cantidadMedallas(d2)
 
 listaopciones = ['Futbol','Baloncesto','Tenis','Waterpolo','Doma','Espada']
 
-txt = st.text_area('texto')
+txt = st.text_input('texto')
+
 opcion = st.selectbox('Selecciona los deportes:', listaopciones)
 
 
@@ -270,7 +271,7 @@ def graficoMedallasNMejores(cat,listapaises,a=10):
     
     
     
-graficoMedallasNMejores (opcion,listapaises,8)
+graficoMedallasNMejores (txt,listapaises,8)
 
 
 
