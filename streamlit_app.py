@@ -216,75 +216,52 @@ d5 = cantidadMedallas(d2)
 #--------------------------------------------------------
 
 
-def graficaPodioDeporte (deport,listadeportes,listapaises):
+def graficoMedallasNMejores(cat,listapaises,a=10):
     """
-    Dado un deporte, dibuja un podio to wapo
+    Dada una cadena de texto (por ejemplo, 'Baloncesto'), devuelve una
+    gráfica círculo con una cantidad 'a' dada de países con su número de
+    medallas ganadas en dicho deporte.
     """
-         
-    def dicPuesto(deportes,paises):
-        """
-        Como el diccionario de nGanadores pero da más peso a los primeros 
-        """
-        a = list (range(1,4))
+     
         
-        res = {}
-        for deporte in deportes:
-            dicpos = {}
-            
-            for i in range (len(paises)): 
-                pos = int ( df99[deporte][i] )
-                if pos != 99 and pos != 0 and pos <= 3:
-                    dicpos[paises[i]] = a[-pos]
-    
-            valores_ord = dict(sorted(dicpos.items(), key=operator.itemgetter(1)))
-            
-            res[deporte] = valores_ord
-                    
-        return res
+    def eliminar0ySoloNMejor(dic,a=10):
+        """
+        Función para ordenar los valores con países con más medallas
+        y eliminar países con 0 medallas
+        """
+        aux = {}
+        valoresord = dict(sorted(dic.items(), key=operator.itemgetter(1) , reverse = True))
+        i = 0
+        for k,v in valoresord.items():
+            if i >= a:
+                break
+            if v > 0:
+                aux[k] = v
+                i += 1
         
-    
-    
-    dic = dicPuesto(listadeportes,listapaises)
-    
-    
-    a = filtro(deport)
-    x = len(a)
-    i = 0
-    for deporte in dic:
-        if deporte in a:
-            i += 1
-            fig = plt.figure()
-            plt.title(deporte)
-            result = dic[deporte]
-            result = pd.Series(result)
-            
-            coloritos = [0,0,0]
-            valores = [0,0,0]
-            indices = ['','','']
-
-            for i in range (len(result.values)):
-                
-                x = result.values[i]
-                z = x   
-                if x == max(result.values):
-                    coloritos[1] = 'gold'
-                    valores[1] = z
-                    indices[1] = result.index[i]
-                elif x == min(result.values):
-                    coloritos[2] = 'sienna'
-                    valores[2] = z
-                    indices[2] = result.index[i]
-                else:
-                    coloritos[0] = 'grey'
-                    valores[0] = z
-                    indices[0] = result.index[i]
-            plt.bar(indices, valores , color= coloritos)
-            st.pyplot(fig)
-
-
+        return aux
 
     
-graficaPodioDeporte('R-Baloncesto M ',listadeportes,listapaises)
+        
+    listadeportes = filtro(cat)
+    
+    d2 = PaisDeporte(listadeportes,listapaises,3)
+    
+    d5 = cantidadMedallas(d2)
+    
+    d6 = eliminar0ySoloNMejor(d5,a)
+    
+    series = pd.Series(d6,copy=True,dtype='float64')
+    
+    plt.figure (figsize = (10,8))
+    
+    plt.pie(series.values,labels=series.index, normalize=True)
+    plt.axis('equal')
+    plt.title(f'Cantidad de medallas en {cat}, {a} países')
+    
+    
+    
+graficoMedallasNMejores ('Mesa M',listapaises,4)
 
 
 def graf():
