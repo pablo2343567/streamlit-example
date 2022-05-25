@@ -280,7 +280,7 @@ agree = st.checkbox('¿Quieres seleccionar los deportes por código? Ej: escribi
 listaopciones = ['A4','Baloncesto','Balonmano','Ciclo','Doma','Espada','Florete','Futbol','Gim','Hockey','K4','N','Rugby','Sable','Salto','Volei','Wax','Waterpolo']
 
 if not agree:
-    opcion = st.selectbox('Selecciona uno de los siguientes deportes:', listaopciones,index = 'Baloncesto')
+    opcion = st.selectbox('Selecciona uno de los siguientes deportes:',options=listaopciones,index = 'Baloncesto')
 else:
     opcion = st.text_input('Escribe un deporte codificado:')
 
