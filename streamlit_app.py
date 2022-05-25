@@ -272,7 +272,7 @@ def graficoMedallasNMejores(cat,listapaises,a=10):
             st.text(deporte)
     
     
-listaopciones = ['Futbol','Baloncesto','Tenis','Waterpolo','Doma','Espada']
+listaopciones = ['Baloncesto','Balonmano','Ciclo','Doma','Espada','Futbol','Hockey','Rugby','Volei','Waterpolo']
 
 opcion = st.selectbox('O de manera más sencilla selecciona uno de los siguientes deportes:', listaopciones)
 
