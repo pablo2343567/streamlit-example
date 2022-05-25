@@ -20,8 +20,10 @@ df99 = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-exa
 dft = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-example/master/t.csv',delimiter=';')
 
 
-dft
 
-
+listadeportes = list (dft['Paises'])
+listapaises = list (df['Paises'])
+ 
+listaaños = ['R-' , '17' , '18' , '19' , 'T-']
 
 
