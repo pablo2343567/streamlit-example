@@ -219,6 +219,8 @@ d5 = cantidadMedallas(d2)
 
 
 
+
+
 def graficaPodioDeporte (deport,listadeportes,listapaises):
     """
     Dado un deporte, dibuja un podio to wapo
@@ -256,8 +258,6 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
     for deporte in dic:
         if deporte in a:
             i += 1
-            fig = plt.figure(figsize=(10,8))
-            st.pyplot(fig)
             plt.title(deporte)
             result = dic[deporte]
             result = pd.Series(result)
@@ -282,166 +282,13 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
                     coloritos[0] = 'grey'
                     valores[0] = z
                     indices[0] = result.index[i]
-            plt.bar(indices, valores , color= coloritos)
-            plt.show()
+            fig = plt.bar(indices, valores , color= coloritos)
+            st.pyplot(fig)
 
 
 
 
 
-
-
-
-def graficaCorrelacion (cat,listadeportes,listapaises,n=20):
-    """
-    Dada una cadena de texto (nombre de una columna, por ejemplo población '20-Pob')
-    y un número de puestos, por ej 3 para seleccionar la cantidad de medallas de
-    oro,plata y bronce.
-    Calcula la correlación entre la columna y la cantidad de medallas
-    """
-    
-    d2 = PaisDeporte(listadeportes,listapaises,n)
-    d5 = cantidadMedallas(d2)
-    
-    colpoblacion = df[cat].tolist()
-    listamedallas = []
-    for k,v in d5.items():
-        listamedallas.append(v)
-        
-    seriespob = pd.Series(colpoblacion)
-    seriesmed = pd.Series(listamedallas)
-    
-    corr = round(seriespob.corr(seriesmed),4)
-    
-    
-    plt.figure(figsize=(10,8))
-    plt.scatter(colpoblacion,listamedallas) 
-    tit = 'Coeficiente de correlación: ' + str(corr)
-    plt.title(tit)
-    plt.xlabel (cat)
-    plt.ylabel('Número de Medallas')
-    
-    
-    
-     
-    
-    
-    
-
-
-def graficoMedallasNMejores(cat,listapaises,a=10):
-    """
-    Dada una cadena de texto (por ejemplo, 'Baloncesto'), devuelve una
-    gráfica círculo con una cantidad 'a' dada de países con su número de
-    medallas ganadas en dicho deporte.
-    """
-     
-        
-    def eliminar0ySoloNMejor(dic,a=10):
-        """
-        Función para ordenar los valores con países con más medallas
-        y eliminar países con 0 medallas
-        """
-        aux = {}
-        valoresord = dict(sorted(dic.items(), key=operator.itemgetter(1) , reverse = True))
-        i = 0
-        for k,v in valoresord.items():
-            if i >= a:
-                break
-            if v > 0:
-                aux[k] = v
-                i += 1
-        
-        return aux
-
-    
-        
-    listadeportes = filtro(cat)
-    
-    d2 = PaisDeporte(listadeportes,listapaises,3)
-    
-    d5 = cantidadMedallas(d2)
-    
-    d6 = eliminar0ySoloNMejor(d5,a)
-    
-    series = pd.Series(d6,copy=True,dtype='float64')
-    
-    plt.figure (figsize = (10,8))
-    
-    plt.pie(series.values,labels=series.index, normalize=True)
-    plt.axis('equal')
-    plt.title(f'Cantidad de medallas en {cat}, {a} países')
-    
-
-
-
-
-
-
-def graficaPuestos (deport,listadeportes,listapaises,n=20):
-    """
-    Dado un deporte, selecciona los países ganadores.
-    Dado un número, selecciona la cantidad de puestos (si n=2, se seleccionan
-    el primero y el segundo del deporte).
-    """
-
-    dic = nGanadores(listadeportes,listapaises,n)
-    a = filtro(deport)
-    x = len(a)
-    i = 0
-    plt.figure(figsize=(6+x*3, 4+x*2))
-    for deporte in dic:
-        if deporte in a:
-            i += 1
-            plt.subplot(x//2 + 1 , x//2 +1 , i)
-            plt.title(deporte)
-            result = dic[deporte]
-            result = pd.Series(result)
-            coloritos = ['grey' if (x < max(result.values)) else 'gold' for x in result.values ]
-            plt.bar(result.index, result.values , color= coloritos)
-
-
-
-
-
-
-
-def graficaBarraStackeada (deport,listadeportes,listapaises,n=20):
-    """
-    Dado un deporte, crea un gráfico de barras apilado con la posición de
-    cada año en ese deporte, resultando una mayor altura de la barra una mejor
-    posición
-    """
-    
-    listaDeporte = filtro(deport)
-    paises = []
-    dic = dicEvolucionNuevo(deport, nGanadoresInversa(listadeportes, listapaises,n))
-    
-    for k,v in dic.items():
-        paises.append(k)
-        x = len(v)
-
-    acumulasion = None
-    
-    plt.figure (figsize = (10,8))
-    for i in range(x):
-        valores = []
-        for clave,valor in dic.items():
-            
-            posicion = valor[i]
-            valores.append(posicion)
-            
-        valores = np.array(valores)
-        plt.bar (paises,valores,bottom = acumulasion)
-        
-        if i == 0:
-            acumulasion = valores
-        else:
-            acumulasion += valores
-        
-    plt.legend(listaDeporte) 
-    plt.suptitle(f'Países que han puntuado en {deport}: {n} mejores puestos')
-    plt.show()
 
     
 graficaPodioDeporte('Baloncesto ',listadeportes,listapaises)
