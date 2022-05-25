@@ -23,4 +23,6 @@ dft = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-exam
 
 
 
-dft[0]
+a = dft.iloc[0]
+
+a
