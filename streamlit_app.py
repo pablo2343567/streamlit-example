@@ -7,6 +7,8 @@ import math
 
 import operator
 import matplotlib as plt
+import matplotlib.pyplot as plt
+
 import numpy as np
 import pygal
 import xlrd
