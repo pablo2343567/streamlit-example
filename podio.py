@@ -1,10 +1,7 @@
 
-
 import streamlit as st
 import pandas as pd
 
-from collections import namedtuple
-import altair as alt
 import math
 
 import operator
@@ -12,9 +9,7 @@ import matplotlib as plt
 import matplotlib.pyplot as plt
 
 import numpy as np
-import pygal
-import xlrd
-from pygal.style import Style
+
 
 
 df = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-example/master/d99.csv',delimiter=';')
@@ -32,23 +27,6 @@ listaaños = ['R-' , '17' , '18' , '19' , 'T-']
 
 
 
-
-def ListaSoloGanadores():
-    """
-    Devuelve una lista de diccionarios con clave el deporte y valor el ganador
-    """
-    res = {}
-    for deporte in listadeportes:
-
-        for i in range (len(listapaises)): 
-            pos = int ( df99[deporte][i] )
-            if pos == 1:
-                res[deporte] = listapaises[i]
-                
-    return res
-
-
-listaGanadores = ListaSoloGanadores()
 
 
 
@@ -189,18 +167,6 @@ def dicEvolucionNuevo(deporte, dic):
                     d[pais] = acum
             i += 1
         return d
-    
-    
-    
-    
-d1 = nGanadores(listadeportes,listapaises)
-d2 = PaisDeporte(listadeportes,listapaises,3)
-
-d4 = nGanadoresInversa (listadeportes,listapaises)
-
-d5 = cantidadMedallas(d2)
-
-
 
 
 
@@ -250,16 +216,10 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
     
     dic = dicPuesto(listadeportes,listapaises)
     
-    
-    a = filtro(deport)
-    x = len(a)
-    i = 0
-    for deporte in dic:
-        if deporte in a:
             i += 1
             fig = plt.figure()
-            plt.title(deporte)
-            result = dic[deporte]
+            plt.title(deport)
+            result = dic[deport]
             result = pd.Series(result)
             
             coloritos = [0,0,0]
