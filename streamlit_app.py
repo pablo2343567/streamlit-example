@@ -280,7 +280,7 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
                     valores[0] = z
                     indices[0] = result.index[i]
             plt.bar(indices, valores , color= coloritos)
-        st.pyplot(fig)
+            st.pyplot(fig)
 
 
 
