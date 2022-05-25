@@ -221,7 +221,7 @@ def main():
             "Bar Plot" # New page name
         ]
     )
-   bar_chart()
+    bar_chart()
    
    
 
