@@ -284,7 +284,7 @@ else:
     opcion = st.text_input('Si lo prefieres puedes intentar introducir una codificación (por ejemplo, puedes probar a introducir M o F para Masculino o Femenino):')
 
 
-agree = st.checkbox('¿Quieres seleccionar los deportes por código? Ej: escribir M para Masculino, value=False)
+agree = st.checkbox('¿Quieres seleccionar los deportes por código? Ej: escribir M para Masculino', value=False)
 
 
 n = st.select_slider('Selecciona la cantidad de países a mostrar', options=range(1,9),value = 4)
