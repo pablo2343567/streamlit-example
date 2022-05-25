@@ -216,9 +216,9 @@ d5 = cantidadMedallas(d2)
 #--------------------------------------------------------
 
 
-listaopciones = ['Futbol']
+listaopciones = ['Futbol','Baloncesto','Tenis','Waterpolo','Doma','Espada']
 
-opcion = st.selectbox('Selecciona los deportes', listadeportes)
+opcion = st.selectbox('Selecciona los deportes:', listaopciones)
 
 
 
