@@ -17,7 +17,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-examp
 
 df99 = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-example/master/d.csv')
 
-dft = df.transpose()
+dft = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-example/master/t.csv')
 
 
 
