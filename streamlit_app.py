@@ -20,11 +20,8 @@ df99 = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-exa
 dft = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-example/master/t.csv',na_values='NA', keep_default_na=False)
 
 
+dft
 
-
-a = list ( dft.loc['Paises'] )
-
-a
 
 
 
