@@ -19,7 +19,7 @@ df99 = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-exa
 
 dft = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-example/master/t.csv')
 
-d = pd.read_excel('https://raw.githubusercontent.com/pablo2343567/streamlit-example/master/d.xlsx')
+
 
 
 a = list ( dft.iloc['Paises'] )
