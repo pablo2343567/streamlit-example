@@ -267,7 +267,7 @@ def graficoMedallasNMejores(cat,listapaises,a=10):
 
         st.pyplot(fig)
     
-    
+        st.text('Teniendo en cuenta las modalidades de',listadeportes)
     
     
 listaopciones = ['Futbol','Baloncesto','Tenis','Waterpolo','Doma','Espada']
