@@ -261,7 +261,7 @@ def graficoMedallasNMejores(cat,listapaises,a=10):
 
         fig = plt.figure ()
 
-        plt.pie(series.values,labels=series.index, normalize=True , autopct=lambda p: '{:.0f}%'.format(p * total / 100),)
+        plt.pie(series.values,labels=series.index, normalize=True)
         plt.axis('equal')
         plt.title(f'Cantidad de medallas en {cat}, hasta un total de {a} países')
 
