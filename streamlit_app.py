@@ -276,11 +276,13 @@ listaopciones = ['Baloncesto','Balonmano','Ciclo','Doma','Espada','Futbol','Hock
 
 opcion = st.selectbox('Selecciona uno de los siguientes deportes:', listaopciones)
 
+opcion = st.text_input('Si lo prefieres puedes intentar introducir una codificación (por ejemplo, puedes probar a introducir M o F para Masculino o Femenino:')
+
+
 n = st.select_slider('Selecciona la cantidad de países a mostrar', options=range(1,9))
 
 graficoMedallasNMejores (opcion,listapaises,n)
 
-opcion = st.text_input('Si lo prefieres puedes intentar introducir una codificación:')
 
 
 
