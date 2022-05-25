@@ -21,8 +21,8 @@ dft = df.transpose()
 
 
 
-listadeportes = list (dft['Países'])
-listapaises = list (df['Países'])
+listadeportes = list (dft['Paises'])
+listapaises = list (df['Paises'])
  
 listaaños = ['R-' , '17' , '18' , '19' , 'T-']
 
