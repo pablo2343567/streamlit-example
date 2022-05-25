@@ -214,30 +214,8 @@ d5 = cantidadMedallas(d2)
 #--------------------------------------------------------
 
 
-def main():
-    page = st.sidebar.selectbox(
-        "Select a Page",
-        [
-            "Bar Plot" # New page name
-        ]
-    )
-    bar_chart()
-   
-   
+arr = np.random.normal(1, 1, size=100)
+fig, ax = plt.subplots()
+ax.hist(arr, bins=20)
 
-def graf():
-    #Creating the dataset
-    data = {'C':20, 'C++':15, 'Java': 30, 'Python':35}
-    Courses = list(data.keys())
-    values = list(data.values())
-
-    fig = plt.figure()
-
-    plt.bar(Courses, values)
-    plt.xlabel("Programming Environment")
-    plt.ylabel("Number of Students")
-    plt.title("Students enrolled in different courses")
-    st.pyplot(fig)
-    
-    
-graf()
+st.pyplot(fig)
