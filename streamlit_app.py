@@ -214,8 +214,15 @@ d5 = cantidadMedallas(d2)
 #--------------------------------------------------------
 
 
-arr = np.random.normal(1, 1, size=100)
-fig, ax = plt.subplots()
-ax.hist(arr, bins=20)
+def pieChart():
+    x = np.array([35, 25, 25, 15])
+    mylabels = ["Python", "JavaScript", "C++", "C"]
 
-st.pyplot(fig)
+    fig = plt.figure(figsize=(10, 4))
+    plt.pie(x, labels = mylabels)
+
+    st.balloons()
+    st.pyplot(fig)
+    
+    
+pieChart()
