@@ -261,7 +261,7 @@ def graficoMedallasNMejores(cat,listapaises,a=10):
 
         fig = plt.figure ()
 
-        plt.pie(series.values,labels=series.index, normalize=True)
+        plt.pie(series.values,labels=series.index, normalize=True , autopct=lambda p: '{:.0f}%'.format(p * total / 100),)
         plt.axis('equal')
         plt.title(f'Cantidad de medallas en {cat}, hasta un total de {a} países')
 
@@ -276,7 +276,7 @@ listaopciones = ['Baloncesto','Balonmano','Ciclo','Doma','Espada','Futbol','Hock
 
 opcion = st.selectbox('Selecciona uno de los siguientes deportes:', listaopciones)
 
-opcion = st.text_input('Si lo prefieres puedes intentar introducir una codificación (por ejemplo, puedes probar a introducir M o F para Masculino o Femenino):')
+#  opcion = st.text_input('Si lo prefieres puedes intentar introducir una codificación (por ejemplo, puedes probar a introducir M o F para Masculino o Femenino):')
 
 
 n = st.select_slider('Selecciona la cantidad de países a mostrar', options=range(1,9),value = 4)
