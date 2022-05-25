@@ -240,7 +240,7 @@ def Mapa (listadeportes,listapaises,nPrimeros,top=False,titulo='Medallas'):
         custom_style = Style(colors = ('#FF0000','#867F88','#E45C13'))
     
     
-    worldmap =  pygal.maps.world.World()
+    pygal.maps.world.World()
       
     
     worldmap.title = 'Cantidad de Medallas por pais'
