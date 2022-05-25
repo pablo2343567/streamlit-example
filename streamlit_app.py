@@ -231,7 +231,7 @@ def graf():
     Courses = list(data.keys())
     values = list(data.values())
 
-    fig = plt.figure(figsize = (10, 5))
+    fig = plt.figure()
 
     plt.bar(Courses, values)
     plt.xlabel("Programming Environment")
