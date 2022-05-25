@@ -218,6 +218,7 @@ d5 = cantidadMedallas(d2)
 
 listaopciones = ['Futbol','Baloncesto','Tenis','Waterpolo','Doma','Espada']
 
+txt = st.text_area('texto')
 opcion = st.selectbox('Selecciona los deportes:', listaopciones)
 
 
@@ -263,13 +264,13 @@ def graficoMedallasNMejores(cat,listapaises,a=10):
     
     plt.pie(series.values,labels=series.index, normalize=True)
     plt.axis('equal')
-    plt.title(f'Cantidad de medallas en {cat}, {a} países')
+    plt.title(f'Cantidad de medallas en {cat}, hasta un total de {a} países')
     
     st.pyplot(fig)
     
     
     
-graficoMedallasNMejores (opcion,listapaises,10)
+graficoMedallasNMejores (opcion,listapaises,8)
 
 
 
