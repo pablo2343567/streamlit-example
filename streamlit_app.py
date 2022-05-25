@@ -46,4 +46,4 @@ with st.echo(code_location='below'):
         .encode(x='x:Q', y='y:Q'))
 
     
- df = pd.read_excel('datos.xlsx')
+df = pd.read_excel('datos.xlsx')
