@@ -275,12 +275,12 @@ def graficoMedallasNMejores(cat,listapaises,a=10):
    
 
 
-agree = st.checkbox('¿Quieres seleccionar los deportes por código? Ej: escribir M para Masculino', value=False)                    
+agree = st.checkbox('¿Quieres seleccionar los deportes por código? Ej: escribir M para todas las modalidades de Masculino', value=False)                    
                     
-listaopciones = ['Baloncesto','Balonmano','Ciclo','Doma','Espada','Futbol','Hockey','Rugby','Volei','Waterpolo']
+listaopciones = ['A4','Baloncesto','Balonmano','Ciclo','Doma','Espada','Florete','Futbol','Gim','Hockey','K4','N','Rugby','Sable','Salto','Volei','Wax','Waterpolo']
 
 if not agree:
-    opcion = st.selectbox('Selecciona uno de los siguientes deportes:', listaopciones)
+    opcion = st.selectbox('Selecciona uno de los siguientes deportes:', listaopciones,index = 'Baloncesto')
 else:
     opcion = st.text_input('Escribe un deporte codificado:')
 
