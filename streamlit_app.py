@@ -258,7 +258,6 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
     for deporte in dic:
         if deporte in a:
             i += 1
-            plt.title(deporte)
             result = dic[deporte]
             result = pd.Series(result)
             
