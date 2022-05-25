@@ -217,10 +217,6 @@ d5 = cantidadMedallas(d2)
 
 
 
-
-
-
-
 def graficaPodioDeporte (deport,listadeportes,listapaises):
     """
     Dado un deporte, dibuja un podio to wapo
@@ -258,6 +254,8 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
     for deporte in dic:
         if deporte in a:
             i += 1
+            fig = plt.figure(figsize=(10,8))
+            plt.title(deporte)
             result = dic[deporte]
             result = pd.Series(result)
             
@@ -282,10 +280,7 @@ def graficaPodioDeporte (deport,listadeportes,listapaises):
                     valores[0] = z
                     indices[0] = result.index[i]
             plt.bar(indices, valores , color= coloritos)
-            st.pyplot(fig)
-
-
-
+        st.pyplot(fig)
 
 
 
