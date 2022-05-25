@@ -442,4 +442,5 @@ def graficaBarraStackeada (deport,listadeportes,listapaises,n=20):
     plt.suptitle(f'Países que han puntuado en {deport}: {n} mejores puestos')
     plt.show()
 
-
+    
+graficaPodioDeporte('Baloncesto ',listadeportes,listapaises)
