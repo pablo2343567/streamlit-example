@@ -254,22 +254,22 @@ def graficoMedallasNMejores(cat,listapaises,a=10):
     listadeportes = filtro(cat)
     if len(listadeportes) == 0:
         st.text('Error, deporte no válido')
-        break
-    d2 = PaisDeporte(listadeportes,listapaises,3)
-    
-    d5 = cantidadMedallas(d2)
-    
-    d6 = eliminar0ySoloNMejor(d5,a)
-    
-    series = pd.Series(d6,copy=True,dtype='float64')
-    
-    fig = plt.figure ()
-    
-    plt.pie(series.values,labels=series.index, normalize=True)
-    plt.axis('equal')
-    plt.title(f'Cantidad de medallas en {cat}, hasta un total de {a} países')
-    
-    st.pyplot(fig)
+    else:
+        d2 = PaisDeporte(listadeportes,listapaises,3)
+
+        d5 = cantidadMedallas(d2)
+
+        d6 = eliminar0ySoloNMejor(d5,a)
+
+        series = pd.Series(d6,copy=True,dtype='float64')
+
+        fig = plt.figure ()
+
+        plt.pie(series.values,labels=series.index, normalize=True)
+        plt.axis('equal')
+        plt.title(f'Cantidad de medallas en {cat}, hasta un total de {a} países')
+
+        st.pyplot(fig)
     
     
     
