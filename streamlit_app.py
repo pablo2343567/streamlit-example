@@ -21,6 +21,6 @@ dft = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-exam
 
 
 
-listadeportes = list (dft['Paises'])
+
 
 dft['Paises']
