@@ -253,11 +253,13 @@ def graficoMedallasNMejores(cat,listapaises,a=10):
     
     series = pd.Series(d6,copy=True,dtype='float64')
     
-    plt.figure (figsize = (10,8))
+    fig = plt.figure ()
     
     plt.pie(series.values,labels=series.index, normalize=True)
     plt.axis('equal')
     plt.title(f'Cantidad de medallas en {cat}, {a} países')
+    
+    st.pyplot(fig)
     
     
     
