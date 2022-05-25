@@ -23,4 +23,4 @@ dft = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-exam
 
 
 
-dft['Paises']
+dft[0]
