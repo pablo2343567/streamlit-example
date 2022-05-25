@@ -22,7 +22,7 @@ dft = pd.read_csv('https://raw.githubusercontent.com/pablo2343567/streamlit-exam
 
 
 
-a = list ( dft.iloc['Paises'] )
+a = list ( dft.loc['Paises'] )
 
 a
 
